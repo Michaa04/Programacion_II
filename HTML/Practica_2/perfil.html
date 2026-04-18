@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <h1>Datos personales del estudiante</h1>
+    <hr>
+    <form action="#" method="" target="_blank">
+        <fieldset>
+            <legend><b>Informacion personal</b></legend>
+        <div>
+            <label for="TipoUsuarioInput">Tipo de usuario:</label>
+            <input type="text" id="TipoUsuarioInput" name="TipoUsuarioInput" value="ESTUDIANTE" readonly>
+        </div>
+        <div>
+            <label for="NombreInput">Nombre completo:</label>
+            <input type="text" id="NombreInput" name="NombreInput" placeholder="Nombre completo">
+        </div>
+        <div>
+            <label for="EmailInput">Email:</label>
+            <input type="email" id="EmailInput" name="EmailInput" placeholder="Email">
+        </div>
+        <div>
+            <label for="EdadInput">Edad:</label>
+            <input type="number" id="EdadInput" name="EdadInput" placeholder="Edad">
+        </div>
+        <div>
+            <label for="NacionalidadSelect">Nacionalidad:</label>
+            <select name="NacionalidadSelect" id="NacionalidadSelect">
+                <option value="" selected disabled>Seleccionar una opcion</option>
+                <option value="1">Argentina</option>
+                <option value="2">Chile</option>
+                <option value="3">Uruguay</option>
+                <option value="4">Paraguay</option>
+                <option value="5">Otro</option>
+            </select>
+        </div>
+        <div>
+            <label for="CondicionLaboralInput">Condición laboral:</label>
+            <select name="CondicionLaboralInput" id="CondicionLaboralInput">
+                <option value="" selected disabled>Seleccionar una opcion</option>
+                <option value="1">Desempleado</option>
+                <option value="2">En busqueda laboral</option>
+                <option value="3">Trabajo Part-time</option>
+                <option value="4">Trabajo Full-time</option>
+            </select>
+        </div>
+        </fieldset>
+        <fieldset>
+            <legend><b>Gustos personales</b></legend>
+        <div>
+            <label for="GustosMusicalInput">Gustos musicales:</label>
+            <input type="text" id="GustosMusicalInput" name="GustosMusicalInput">
+        </div>
+        <div>
+            <label for="ComidaSelect">Comida preferida:</label>
+            <select name="ComidaSelect" id="ComidaSelect">
+                <option value="" selected disabled>Seleccionar una opcion</option>
+                <option value="1">Pizza</option>
+                <option value="2">Hamburguesa</option>
+                <option value="3">Pasta</option>
+                <option value="4">Ensalada</option>
+                <option value="5">Otro</option>
+            </select>
+        </div>
+        
+        </fieldset>
+        <div>
+            <label for="CheckboxInput">Recordarme</label>
+            <input type="checkbox" id="CheckboxInput" name="CheckboxInput">
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+        
+    </form>
+</body>
+</html>
