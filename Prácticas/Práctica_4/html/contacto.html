@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- Encabezado-->
+    <header>
+        <h1>Tecnología hoy</h1>
+    </header>
+
+    <div class="container">
+        <!--Navegación / contenedor izquierdo-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="multimedia.html">Multimedia</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!--Contenedor principal-->
+        <main>
+            <section>
+                <h2>Formulario de contacto</h2>
+                <form action="">
+                    <table>
+                        <tr>
+                            <td><label for="inputnombre">Nombre:</label></td>
+                            <td><input type="text" id="inputnombre" name="inputnombre" required></td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="inputemail">Email:</label></td>
+                            <td><input type="email" id="inputemail" name="inputemail" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputdad">Edad:</label></td>
+                            <td><input type="number" id="inputedad" name="inputedad"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputcolorpreferido">Color preferido:</label></td>
+                            <td><input type="color" id="inputcolorpreferido" name="inputcolorpreferido"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputcomentario">Comentario:</label></td>
+                            <td><textarea id="inputcomentario" name="inputcomentario" minlength="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Enviar formulario"></td>
+                        </tr>
+                    </table>
+                </form>
+                <h2>Nuestra Ubicación</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4876.342598658284!2d-60.9130483399705!3d-32.899907020731426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6499abd513111%3A0x24fd58ccd935f5fb!2sInstituto%20Superior%20N%C2%B0%204038%20Juan%20Pablo%20II!5e0!3m2!1ses-419!2sar!4v1777420834864!5m2!1ses-419!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </main>
+        <!--Contenedor secundario / derecho-->
+        <div class="right">
+            <h2>Info</h2>
+            <p>La inteligencia artificial ya se usa en celulares, autos y hogares.</p>
+        </div>
+    </div>
+    <!-- Pie de Página-->
+    <footer>
+        <p>@ 2026 Tecnología hoy</p>
+    </footer>
+</body>
+
+</html>
