@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .itemOld{
+            background-color: cyan;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /*Flex1*/
+        .container{
+            display: flex;
+        }
+        .item{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex2*/
+        .container2{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .item2{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex3*/
+        .container3{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .item3{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex4*/
+        .container4{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .item4{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex5*/
+        .container5{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .item5{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex6*/
+        .container6{
+            display: flex;
+            justify-content: space-evenly; /*flex-start. flex-end, center. space-around. space-between*/
+        }
+        .item6{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex7*/
+        .container7{
+            display: flex;
+            align-items: baseline; /*center. flex-start. flex-end. stretch*/
+
+            height: 500px;
+        }
+        .item7{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        /*Flex8*/
+        .container8{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        .item8{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+            height: 50px;
+        }
+
+        /*Flex9*/
+        .container9{
+            display: flex;
+            align-items: baseline;
+
+            height: 100px;
+        }
+        .item9{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        .crecer0{
+            flex-grow: 0;
+            flex-basis: 180px;
+            /*flex-shirnk*/
+        }
+
+        .crecer1{
+            flex-grow: 3;
+        }
+
+        .crecer2{
+           /* flex-grow: 0; */
+            flex: 0 180px;
+
+        }
+
+        /*Flex10*/
+        .container10{
+            display: flex;
+            align-items: baseline; /*center. flex-start. flex-end. stretch*/
+
+            height: 100px;
+        }
+        .item10{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+
+        .orden1{
+            order: 1;
+        }
+
+        .orden2{
+            order: 2;
+        }
+
+        .orden3{
+            order: 3;
+        }
+
+        .orden4{
+            order: 4;
+        }
+
+        /*Flex11*/
+        .container11{
+            display: flex;
+            align-items: baseline; /*center. flex-start. flex-end. stretch*/
+
+            height: 200px;
+        }
+        .item11{
+            background-color: cyan;
+            padding: 20px;
+            margin: 2px;
+        }
+        .alineacion1{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+<!--Tradicional-->
+        <table>
+            <tr>
+                <td class="itemOld">1</td>
+                <td class="itemOld">2</td>
+                <td class="itemOld">3</td>
+            </tr>
+        </table>
+<hr>
+<!--Flexbox-->
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+<hr>
+        <div class="container2">
+            <div class="item2">1</div>
+            <div class="item2">2</div>
+            <div class="item2">3</div>
+        </div>
+<hr>
+        <div class="container3">
+            <div class="item3">1</div>
+            <div class="item3">2</div>
+            <div class="item3">3</div>
+        </div>
+<hr>
+        <div class="container4">
+            <div class="item4">1</div>
+            <div class="item4">2</div>
+            <div class="item4">3</div>
+            <div class="item4">4</div>
+            <div class="item4">5</div>
+            <div class="item4">6</div>
+            <div class="item4">7</div>
+            <div class="item4">8</div>
+            <div class="item4">9</div>
+            <div class="item4">10</div>
+            <div class="item4">11</div>
+        </div>
+
+<hr>
+        <div class="container5">
+            <div class="item">1</div>
+            <div class="item5">2</div>
+            <div class="item5">3</div>
+            <div class="item5">4</div>
+            <div class="item5">5</div>
+            <div class="item5">6</div>
+            <div class="item5">7</div>
+            <div class="item5">8</div>
+            <div class="item5">9</div>
+            <div class="item5">10</div>
+            <div class="item5">11</div>
+        </div>
+
+<hr>
+        <div class="container6">
+            <div class="item6">1</div>
+            <div class="item6">2</div>
+            <div class="item6">3</div>
+        </div>
+
+<hr>
+        <div class="container7">
+            <div class="item7">1</div>
+            <div class="item7">2</div>
+            <div class="item7">3</div>
+        </div>
+
+<hr>
+        <div class="container8">
+            <div class="item8">Esta Alineado al centro</div>
+        </div>
+
+<hr>
+        <div class="container9">
+            <div class="item9 crecer0">FLEX</div>
+            <div class="item9 crecer1">2</div>
+            <div class="item9 crecer3">3</div>
+        </div>
+
+<hr>
+        <div class="container10">
+            <div class="item10 orden3">1</div>
+            <div class="item10 orden4">2</div>
+            <div class="item10 orden1">3</div>
+            <div class="item10 orden2">4</div>
+        </div>
+        <!--0, 1, 2, n-->
+
+<hr>
+        <div class="container10">
+            <div class="item10 orden3">1</div>
+            <div class="item10 orden4">2</div>
+            <div class="item10 orden1">3</div>
+            <div class="item10 orden2">4</div>
+        </div>
+
+<hr>
+        <div class="container11">
+            <div class="item11 orden3">1</div>
+            <div class="item11 orden4">2</div>
+            <div class="item11 orden1">3</div>
+            <div class="item11 orden2">4</div>
+        </div>
+
+</body>
+</html>
