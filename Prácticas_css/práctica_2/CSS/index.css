@@ -53,6 +53,8 @@ nav {
 
 .nav-item-login {
     background-color: rgb(255, 151, 15);
+    border: 3px solid white;
+    border-radius: 20px;
 }
 
 
