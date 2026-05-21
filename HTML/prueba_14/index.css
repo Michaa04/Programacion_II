@@ -73,7 +73,6 @@ nav .contenedor_nav a:hover {
     color: yellow;    
 }
 
-
 .contenedor_cuerpo .contenedor_main_lateral {
     grid-area: contenedor_main_lateral;
     display: flex;
