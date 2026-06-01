@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <style>
+        /* ── Reset & Variables ─────────────────────────────────── */
+        :root {
+            --color-primario: #2D6A4F;
+            --color-secundario: #52B788;
+            --color-acento: #B7E4C7;
+            --color-texto: #1B1B1B;
+            --fuente-titulo: 'Georgia', serif;
+            --fuente-cuerpo: 'Trebuchet MS', sans-serif;
+            --radio-borde: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            background-color: var(--color-acento);
+            color: var(--color-texto);
+            line-height: 1.7;
+        }
+
+        /* ── Header ───────────────────────────────────────────── */
+        header {
+            background-color: var(--color-primario);
+            color: #fff;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: var(--fuente-titulo);
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── Navegación ───────────────────────────────────────── */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radio-borde);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+        }
+
+        /* ── Layout principal ─────────────────────────────────── */
+        .contenedor {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+        }
+
+        /* ── Artículos ────────────────────────────────────────── */
+        article {
+            background: #fff;
+            border-radius: var(--radio-borde);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        article h2 {
+            font-family: var(--fuente-titulo);
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            color: var(--color-primario);
+        }
+
+        article .meta {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        article p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        article img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 4px solid var(--color-secundario);
+        }
+
+        /* ── Etiquetas / Tags ─────────────────────────────────── */
+        .etiquetas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .etiqueta {
+            background-color: var(--color-acento);
+            color: var(--color-primario);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Tabla de datos ───────────────────────────────────── */
+        .tabla-wrapper {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        table th,
+        table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table th {
+            background: var(--color-primario);
+            color: white;
+            font-weight: 700;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f4f9f6;
+        }
+
+        table tr:hover {
+            background-color: var(--color-acento);
+            cursor: default;
+        }
+
+        /* ── Sidebar ──────────────────────────────────────────── */
+        aside {
+            position: sticky;
+            top: 2rem;
+            align-self: start;
+        }
+
+        .widget {
+            background: #fff;
+            border-radius: var(--radio-borde);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .widget h3 {
+            font-family: var(--fuente-titulo);
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-acento);
+            padding-bottom: 0.5rem;
+        }
+
+        /* ── Formulario de suscripción ────────────────────────── */
+        .form-suscripcion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .form-suscripcion input[type="email"] {
+            padding: 0.6rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: var(--radio-borde);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.25s;
+        }
+
+        .form-suscripcion input[type="email"]:focus {
+            border-color: var(--color-secundario);
+        }
+
+        .form-suscripcion input[type="text"] {
+            padding: 0.6rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: var(--radio-borde);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.25s;
+        }
+
+        .form-suscripcion input[type="text"]:focus {
+            border-color: var(--color-secundario);
+        }
+
+        .form-suscripcion textarea:focus {
+            border-color: var(--color-secundario);
+        }
+
+        .form-suscripcion textarea {
+            padding: 0.6rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: var(--radio-borde);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.25s;
+        }
+
+        .btn-suscribir {
+            padding: 0.65rem 1.2rem;
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            border-radius: var(--radio-borde);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.15s;
+        }
+
+        .btn-suscribir:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            transform: translateY(-2px);
+        }
+
+        /* ── Lista reciente ───────────────────────────────────── */
+        .lista-reciente {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lista-reciente li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 0.9rem;
+        }
+
+        .lista-reciente li:last-child {
+            border-bottom: none;
+        }
+
+        .lista-reciente a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .lista-reciente a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ───────────────────────────────────────────── */
+        footer {
+            background-color: var(--color-texto);
+            color: #ddd;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            font-size: 0.88rem;
+        }
+
+        article a,
+        .widget a {
+            color: var(--color-primario);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        article a:hover,
+        .widget a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Media Query ──────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .contenedor {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Michael Zarza</h1>
+        <nav>
+            <ul>
+                <li><a href="#perfil">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <div class="contenedor">
+            <!-- SECCIÓN PRINCIPAL -->
+            <section>
+                <!-- Artículo 1 -->
+                <article id="perfil">
+                    <img src="/img/michael_cv.jpeg" alt="Foto de perfil">
+                    <h2>Perfil Profesional</h2>
+                    <p>
+                        Estudiante de Desarrollo de Software con interés en programación web,
+                        bases de datos y desarrollo de aplicaciones. Me caracterizo por la
+                        responsabilidad, el aprendizaje continuo y el trabajo en equipo.
+                    </p>
+
+                    <div class="etiquetas">
+                        <span class="etiqueta">HTML</span>
+                        <span class="etiqueta">CSS</span>
+                        <span class="etiqueta">JavaScript</span>
+                        <span class="etiqueta">Python</span>
+                        <span class="etiqueta">MySQL</span>
+                        <span class="etiqueta">MongoDB</span>
+                        <span class="etiqueta">Github</span>
+                    </div>
+                </article>
+                <!-- Artículo 2 — con tabla -->
+                <article id="educacion">
+                    <h2>Educación</h2>
+                    <p>Actualmente cursando la Tecnicatura en Desarrollo de Software</p>
+                    <div class="tabla-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Institución</th>
+                                    <th>Titulo</th>
+                                    <th>Periodo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Instituto Superior Juan Pablo II</td>
+                                    <td>Tecnicatura en Desarrollo de Software</td>
+                                    <td>2024 - Actualidad</td>
+                                </tr>
+                                <tr>
+                                    <td>Secundario Bernardino Rivadavia 432</td>
+                                    <td>Bachiller en Economia y administración</td>
+                                    <td>2018-2022</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+                <!-- Artículo 3 — Proyectos -->
+                <article id="proyectos">
+                    <h2>Proyectos Destacados</h2>
+                    <p>Algunos proyectos desarrollados durante mi formación académica y
+                        práctica personal:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Sistema de Gestión Gomería</strong><br>
+                            Sistema web para administrar clientes, productos, compra y venta de una gomería.
+                            <br>
+                            <a href="https://github.com/Luci1274/PPI_gomeria_codigo" target="_blank">Ver proyecto en
+                                Github</a>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Conversor de monedas</strong><br>
+                            Sistema para convertir entre diferentes monedas.
+                            <br>
+                            <a href="https://github.com/Michaa04/conversor-monedas-python" target="_blank">Ver proyecto
+                                en Github</a>
+                        </li>
+                    </ul>
+                    <div class="etiquetas">
+                        <span class="etiqueta">Python</span>
+                        <span class="etiqueta">Flask</span>
+                        <span class="etiqueta">HTML</span>
+                        <span class="etiqueta">CSS</span>
+                        <span class="etiqueta">Github</span>
+                    </div>
+
+                </article>
+            </section>
+            <!-- SIDEBAR -->
+            <aside>
+                <!-- Widget datos personales -->
+                <div class="widget">
+                    <h3>Datos Personales</h3>
+                    <p><strong>Nombre:</strong> Michael Zarza</p>
+                    <p><strong>Email:</strong> michaelzarza12@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +54 341-314-74-04</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/michael-zarza-60044b274/"
+                            target="_blank">Ver perfil</a></p>
+                    <p><strong>Ciudad:</strong> Roldan, Santa Fe</p>
+                </div>
+                <!-- Widget habilidades -->
+                <div class="widget">
+                    <h3>Habilidades</h3>
+                    <div class="etiquetas">
+                        <span class="etiqueta">HTML</span>
+                        <span class="etiqueta">CSS</span>
+                        <span class="etiqueta">JavaScript</span>
+                        <span class="etiqueta">Python</span>
+                        <span class="etiqueta">MySQL</span>
+                        <span class="etiqueta">MongoDB</span>
+                        <span class="etiqueta">Github</span>
+                    </div>
+                </div>
+            </aside>
+        </div><!-- /.contenedor -->
+        <!-- PIE DE PÁGINA -->
+        <footer>
+            <p>&copy; 2025 Michael Zarza — Todos los derechos reservados</p>
+            <p>Diseñado con ♥ por Michael Zarza</p>
+        </footer>
+
+</body>
+
+</html>
