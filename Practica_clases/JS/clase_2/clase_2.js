@@ -47,11 +47,11 @@ function fprofesion() {
     if (genero.value == 1) {
         opcionesHTML = '<option value="">Selecciona profesión</option> <option value="actor">Actor</option> <option value="medico">Medico</option>';
         profesion.disabled = false
-    } else if (genero.value === 2) {
-        opcionesHTML = '<option value="">-- Selecciona profesión --</option> <option value="artista">Artista</option> <option value="docente">Docente</option>';
+    } else if (genero.value == 2) {
+        opcionesHTML = '<option value="">Selecciona profesión</option> <option value="artista">Artista</option> <option value="docente">Docente</option>';
         profesion.disabled = false
     } else {
-        opcionesHTML = '<opcion value="">Primero selecciones un género</opcion>'
+        opcionesHTML = '<opcion value="">Primero seleccione un género</opcion>'
         profesion.disabled = true
     };
     profesion.innerHTML = opcionesHTML
