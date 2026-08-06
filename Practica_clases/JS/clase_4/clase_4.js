@@ -12,7 +12,16 @@ function numero_mayor() {
   }
 }
 
-function mayor() {
+function par_impar() {
+    let numero = Number(document.getElementById("input_number").value);
+    if (numero % 0) {
+      alert("Numero Par");
+    } else {
+      alert("Numero impar")
+    }
+}
+
+function edad_comprobante() {
   let edad = Number(document.getElementById("input_edad").value);
 
   if (isNaN(edad)) {
@@ -44,22 +53,28 @@ function calcular() {
   let num1 = Number(document.getElementById("inputnumber1").value);
   let num2 = Number(document.getElementById("inputnumber2").value);
   let op = document.getElementById("inputoperacion").value;
-
+  switch (op) {
+    case "+": resultado = num1 + num2; break;
+    case "-": resultado = num1 - num2; break;
+    case "*": resultado = num1 * num2; break;
+    case "/": resultado = num1 / num2; break
+    default: resultado = "operación no valida";
+  }
+  alert("El resultado es: " + resultado)
 }
 
-
+// Operador Ternario
 function descuento() {
   let num = 10500;
   let resultado = num >= 10000 ? num * 0.80 : num;
   alert("Total a pagar:" + resultado);
 }
 
-function mayor(){
+//function mayor(){ 
+function mayor() {
   let a = 8;
   let b = 3;
   let c = 2;
-
-  let mayor = a > b ? (a > c ? a:c): (b > c ? b : c);
+  let mayor = a > b ? (a > c ? a : c) : (b > c ? b : c);
   alert("El numero mayor es: " + mayor)
-
 }
