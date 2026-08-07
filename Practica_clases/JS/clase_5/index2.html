@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de DOM</title>
+</head>
+<script>
+    let titulo = document.getElementsByTagName("h1");
+
+    titulo.innerText = "Hola mundo desde 35";
+
+    document.getElementsByTagName("li")[1].innerText = "Elemento 1 desde 35"
+
+    let textos = document.getElementById("texto");
+    textos.innerHTML = "<b>lorem"
+
+    let items = document.querySelectorAll("ul li.item");
+
+    //items[1].style.color = "red";
+
+    for (let i = 0; i < items.length; i++) {
+        i % 2 === 0 ? 
+        items[i].style.color = "blue" :
+        items[i].style.color = "red";
+    }
+
+    textos.classList.add("clsTexto", "clsTextos");
+    textos.classList.remove("clsTexto", "pepepe")
+
+    textos.classList.toggle("c7777");
+
+    textos.classList.contains(clsTexto) ? console.log("Si contiene la clase clsTexto") : 
+    console.log("No contiene la clase clsTexto");
+
+    let link = document.getElementById("mylink");
+    let href = link.getAttribute("target");
+
+    link.setAttribute("target", "_blank");
+    link.setAttribute("class", "");
+
+    link.removeAttribute("class");
+
+    let nuevoP = document.createElement("p");
+    let nuevoContenido = document.createTextNode("Hola mundo desde 35");
+
+    nuevoP.appendChild(nuevoContenido);
+
+    let principal = document.getElementById("principal");
+    principal.appendChild(nuevoP);
+
+    function cargar() {
+        let input = document.getElementsByTagName("input") [0]; 
+        input.value = "Cargando datos desde 35";
+    }
+
+    let btn = document.getElementById("cargarBtn");
+    btn.addEventListener("click", function() {
+        let input = document.getElementsByTagName("input")[0];
+        input.value = "Cargado datos desde JS";
+    });
+
+    btn.onclick = cargar;
+
+//
+onclick
+oncontextlost
+onmouseover
+onmouseout
+
+onkeydown
+onkeyup
+onkeypress
+
+onsubmit
+onfocus
+onblur
+onchange
+
+onload
+onunload
+onresize
+
+</script>
+<body>
+    <h1>Manipulación del DOM (Document Object Model) con JS</h1>
+    <ul>
+        <li class="item">Elemento 1</li>
+        <li class="item2">Elemento 2</li>
+        <li class="item3">Elemento 3</li>
+        <li class="item4">Elemento 4</li>
+    </ul>
+
+    <div id="texto" class="clstexto clsTextos"></div>
+
+    <a href="index2.html" id="mylink">Ir a selectores</a>
+
+    <div id="principal">
+        <h1 id="tittle">Pepita la pistolera</h1>
+        <p>parrafo</p>
+    </div>
+</body>
+</html>
