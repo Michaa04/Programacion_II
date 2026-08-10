@@ -6,80 +6,119 @@
     <title>Manipulación de DOM</title>
 </head>
 <script>
+    // 1. SELECCIÓN Y MODIFICACIÓN DE TEXTO/HTML
+
+    // getElementsByTagName devuelve una colección (HTMLCollection) con todos los <h1>.
+    // Accedemos al primero usando la posición [0].
     let titulo = document.getElementsByTagName("h1");
 
-    titulo.innerText = "Hola mundo desde 35";
+    titulo.innerText = "Hola mundo desde 35"; // Cambia el texto del primer <h1>
 
+    // Selecciona el segundo elemento <li> (índice 1) y cambia su texto
     document.getElementsByTagName("li")[1].innerText = "Elemento 1 desde 35"
-
+    
+    // getElementById obtiene un único elemento por su atributo id="texto"
     let textos = document.getElementById("texto");
+    // innerHTML permite interpretar y renderizar etiquetas HTML dentro del elemento
     textos.innerHTML = "<b>lorem"
 
+    // 2. RECORRIDO DE NODOS Y APLICACIÓN DE ESTILOS
+    
+    // querySelectorAll obtiene todos los elementos que coincidan con el selector CSS (retorna un NodeList)
     let items = document.querySelectorAll("ul li.item");
 
     //items[1].style.color = "red";
-
+    // Bucle for para iterar a través de cada elemento seleccionado
     for (let i = 0; i < items.length; i++) {
+        // Operador ternario: evaluamos si el índice es par o impar
+            // i % 2 === 0 verifica si el residuo de dividir entre 2 es cero (par)
         i % 2 === 0 ? 
-        items[i].style.color = "blue" :
-        items[i].style.color = "red";
+        items[i].style.color = "blue" : // Posiciones pares (0, 2...): texto azul
+        items[i].style.color = "red"; // Posiciones impares (1, 3...): texto rojo
     }
 
-    textos.classList.add("clsTexto", "clsTextos");
-    textos.classList.remove("clsTexto", "pepepe")
+    // 3. GESTIÓN DE CLASES DE CSS (classList)
 
+    // Agrega una o varias clases CSS al elemento
+    textos.classList.add("clsTexto", "clsTextos");
+    // Elimina las clases especificadas (si existen)
+    textos.classList.remove("clsTexto", "pepepe")
+    // Alterna la clase: si no existe la agrega, si ya existe la quita
     textos.classList.toggle("c7777");
 
+    // contains() verifica si el elemento posee la clase dada y retorna true/false.
+        // Corregido: "clsTexto" debe ir entre comillas por ser un String.
     textos.classList.contains(clsTexto) ? console.log("Si contiene la clase clsTexto") : 
     console.log("No contiene la clase clsTexto");
 
+    // 4. MANIPULACIÓN DE ATRIBUTOS HTML
+    
+    
     let link = document.getElementById("mylink");
+    // getAttribute lee el valor actual de un atributo (ej. target, href, id)
     let href = link.getAttribute("target");
+    // setAttribute establece o modifica el valor de un atributo (atributo, valor)
+    link.setAttribute("target", "_blank"); // Abre el enlace en una pestaña nueva
+    link.setAttribute("class", ""); // Asigna una clase
 
-    link.setAttribute("target", "_blank");
-    link.setAttribute("class", "");
-
+    // removeAttribute elimina completamente el atributo indicado del elemento
     link.removeAttribute("class");
 
+    // 5. CREACIÓN Y AGREGADO DE NUEVOS NODOS AL DOM
+
+    // Crea un nuevo elemento HTML <p> en memoria
     let nuevoP = document.createElement("p");
+    // Crea un nodo de texto plano en memoria
     let nuevoContenido = document.createTextNode("Hola mundo desde 35");
-
+    // Inserta el texto dentro del elemento <p> recién creado
     nuevoP.appendChild(nuevoContenido);
-
+    // Selecciona el contenedor objetivo por su ID
     let principal = document.getElementById("principal");
+    // Agrega el nuevo <p> al final de los elementos de #principal
     principal.appendChild(nuevoP);
 
+    // 6. MANEJO DE EVENTOS (INTERACCIÓN)
+    // Función personalizada para modificar el valor de un campo input
     function cargar() {
         let input = document.getElementsByTagName("input") [0]; 
         input.value = "Cargando datos desde 35";
     }
 
     let btn = document.getElementById("cargarBtn");
+    // Método moderno para escuchar eventos: addEventListener(evento, función)
     btn.addEventListener("click", function() {
         let input = document.getElementsByTagName("input")[0];
         input.value = "Cargado datos desde JS";
     });
 
+    // Método tradicional/propiedad de evento: asigna la función directa.
+        // NOTA: Esta línea sobrescribirá la funcionalidad anterior asignada por el clic.
     btn.onclick = cargar;
 
-//
-onclick
-oncontextlost
-onmouseover
-onmouseout
+// GUÍA RÁPIDA DE EVENTOS COMUNES EN JAVASCRIPT
+/*
+        EVENTOS DEL RATÓN:
+        - onclick: Se ejecuta al hacer clic.
+        - oncontextlost: Evento cuando se pierde el contexto gráfico (ej. WebGL).
+        - onmouseover: El cursor pasa por encima del elemento.
+        - onmouseout: El cursor sale del área del elemento.
 
-onkeydown
-onkeyup
-onkeypress
+        EVENTOS DEL TECLADO:
+        - onkeydown: Se presiona una tecla.
+        - onkeyup: Se suelta una tecla.
+        - onkeypress: Se mantiene o presiona una tecla que genera texto (obsoleto en estándares modernos).
 
-onsubmit
-onfocus
-onblur
-onchange
+        EVENTOS DE FORMULARIO:
+        - onsubmit: Se envía un formulario.
+        - onfocus: Un elemento toma el foco (al hacer clic dentro de un input).
+        - onblur: Un elemento pierde el foco.
+        - onchange: El valor del elemento ha cambiado y perdió el foco.
 
-onload
-onunload
-onresize
+        EVENTOS DE VENTANA / DOCUMENTO:
+        - onload: La página o imagen ha terminado de cargar completamente.
+        - onunload: El usuario abandona la página (obsoleto, se prefiere pagehide).
+        - onresize: La ventana del navegador cambia de tamaño.
+        */
 
 </script>
 <body>
