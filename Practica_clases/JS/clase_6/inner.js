@@ -34,6 +34,7 @@ function probarStorage_clear() {
 }
 //Ejemplo de uso
 function guardarEmail() {
+    let email = 
     localStorage.setItem()
 }
 
