@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculadora {
+    background-color: #01fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-spacing: 10px;
+}
+
+.resultado {
+    background-color: #222a;
+    color: #fff;
+    font-size: 2rem;
+    text-align: left;
+    padding: 16px;
+    border-radius: 6px;
+    height: 80px;
+    min-width: 200px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+}
+
+button:hover {
+    background-color: #fffa;
+}
+
+

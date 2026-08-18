@@ -1,6 +1,6 @@
 async function clima(ciudad) {
     if (ciudad !== "") {
-        const api_id = "a49f2089297d7216a6e25354544799ce";
+        const api_id = "a49f2089297d7216a6e25354544789ce";
         const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${api_id}&units=metric&lang=es`;
 
         try {

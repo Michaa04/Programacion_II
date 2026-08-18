@@ -6,30 +6,40 @@
     <link rel="stylesheet" href="style.css">
     <title>Calculadora</title>
 </head>
-<body>
+<body onload="init()">
     <table class="calculadora">
         <tr>
-            <td colspan="4" id="resultado"></td>
+            <td colspan="4" id="resultado" class="resultado"></td>
         </tr>
         <tr>
-            <td><button>7</button></td>
-            <td><button>8</button></td>
-            <td><button>9</button></td>
-            <td><button>/</button></td>
+            <td><button id="reset">C</button></td>
+            <td><button id="borrar-num">AC</button></td>
         </tr>
         <tr>
-            <td><button>4</button></td>
-            <td><button>5</button></td>
-            <td><button>6</button></td>
-            <td><button>*</button></td>
+            <td><button id="siete">7</button></td>
+            <td><button id="ocho">8</button></td>
+            <td><button id="nueve">9</button></td>
+            <td><button id="division">/</button></td>
         </tr>
         <tr>
-            <td><button>1</button></td>
-            <td><button>2</button></td>
-            <td><button>3</button></td>
-            <td><button>-</button></td>
+            <td><button id="cuatro">4</button></td>
+            <td><button id="cinco">5</button></td>
+            <td><button id="seis">6</button></td>
+            <td><button id="multiplicacion">*</button></td>
         </tr>
-        <tr></tr>
+        <tr>
+            <td><button id="uno">1</button></td>
+            <td><button id="dos">2</button></td>
+            <td><button id="tres">3</button></td>
+            <td><button id="resta">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="cero">0</button></td>
+            <td><button id="coma">.</button></td>
+            <td><button id="igual">=</button></td>
+            <td><button id="suma">+</button></td>
+        </tr>
     </table>
+    <script src="operaciones.js"></script>
 </body>
 </html>
