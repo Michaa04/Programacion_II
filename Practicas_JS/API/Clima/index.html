@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clima</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Clima</h1>
+        <form action="" class="seleccion-form">
+            <label for="select-ciudad">Ciudad</label>
+            <select name="select-ciudad" id="select-ciudad" onchange="clima()">
+                <option value="defecto">Seleccionar una ciudad</option>
+                <option value="Rosario,AR">Rosario (Argentina)</option>
+                <option value="Asuncion,PY">Asuncion (Paraguay)</option>
+                <option value="Roldan,AR">Roldan (Argentina)</option>
+                <option value="Lima,PE">Lima (Peru)</option>
+                <option value="Funes,AR">Funes (Argentina)</option>
+                <option value="Parana,AR">Parana (Argentina)</option>
+                <option value="Barcelona,ES">Barcelona (España)</option>
+                <option value="Cordoba,AR">Cordoba (Argentina)</option>
+                <option value="San Carlos de Bariloche,AR">Bariloche (Argentina)</option>
+            </select>
+            <div class="tarjeta" id="tarjeta">
+            </div>
+        </form>
+    </div>
+    <script src="clima.js"></script>
+</body>
+</html>

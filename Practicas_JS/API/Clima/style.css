@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    background-color: #345;
+    color: #fff;
+}
+
+.seleccion-form {
+    width: 160px;
+    background-color: #456a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+}
+
